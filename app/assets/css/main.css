@@ -1,1 +1,29 @@
+@import url('https://fonts.googleapis.com/css2?family=Aguafina+Script&display=swap');
 @import "tailwindcss";
+
+.font-aguafina {
+  font-family: 'Aguafina Script', cursive;
+}
+
+.font-clash {
+  font-family: 'Clash Display', sans-serif;
+}
+
+.font-inter {
+  font-family: 'Inter', sans-serif;
+}
+
+.font-syne {
+  font-family: 'Syne', sans-serif;
+}
+
+/* Smooth scrolling for hash links */
+html {
+  scroll-behavior: smooth;
+}
+
+/* Yellow glowing navbar effect */
+.navbar-glow {
+  box-shadow: 0 0 20px rgba(251, 191, 36, 0.3), 0 0 40px rgba(251, 191, 36, 0.2), 0 0 60px rgba(251, 191, 36, 0.1);
+  border-bottom: 1px solid rgba(251, 191, 36, 0.4);
+}
