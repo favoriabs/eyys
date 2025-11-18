@@ -1,51 +1,120 @@
 <template>
-  <section id="contact" class="bg-black text-white px-6 md:px-20 py-20">
-    <div class="bg-neutral-900 rounded-3xl p-8 md:p-12 flex flex-col md:flex-row justify-between gap-12">
-      <!-- Left Info -->
-      <div class="flex-1">
-        <h2 class="text-4xl md:text-5xl font-extrabold mb-4 font-clash">We’re Here To Assist You</h2>
-        <p class="text-gray-300 mb-10 font-inter">
-          Have questions about the retreat? Need help with registration? Our team is ready to assist you.
-        </p>
+  <section
+    id="contact"
+    class="bg-black text-white px-6 py-20
+           md:px-12 lg:px-20
+           max-w-4xl lg:max-w-5xl xl:max-w-6xl mx-auto"
+  >
 
-        <div class="grid grid-cols-2 gap-8">
-          <div>
-            <h3 class="font-bold text-sm mb-1 uppercase font-clash">Contact Us</h3>
-            <p class="text-gray-300 font-inter">+234 80 123 4567</p>
-          </div>
-          <div>
-            <h3 class="font-bold text-sm mb-1 uppercase font-clash">Location</h3>
-            <p class="text-gray-300 font-inter">Potter House, Oshogbo Nigeria</p>
-          </div>
-          <div>
-            <h3 class="font-bold text-sm mb-1 uppercase font-clash">Email</h3>
-            <p class="text-gray-300 font-inter">potterhouse@gmail.com</p>
-          </div>
-          <div>
-            <h3 class="font-bold text-sm mb-1 uppercase font-clash">Follow Us</h3>
-            <p class="text-gray-300 font-inter">@endyouryearstrong</p>
-          </div>
-        </div>
+    <!-- Heading -->
+    <h2
+      class="text-3xl font-extrabold font-clash
+             md:text-4xl lg:text-5xl"
+    >
+      CONTACT
+    </h2>
+
+    <!-- Card -->
+    <div
+      class="mt-6 bg-neutral-900 rounded-3xl p-6
+             md:p-10 lg:p-12"
+    >
+
+      <!-- Lead Title -->
+      <h3
+        class="text-lg font-extrabold font-clash
+               md:text-xl lg:text-2xl"
+      >
+        We’re Here To Assist You
+      </h3>
+
+      <p
+        class="text-gray-300 text-sm mt-3 leading-relaxed font-inter
+               md:text-base md:max-w-xl"
+      >
+        Have questions about the retreat?<br />
+        Need help with registration?<br />
+        Our team is ready to assist you.
+      </p>
+
+      <!-- Location -->
+      <h4
+        class="text-lg font-extrabold font-clash mt-8
+               md:text-xl"
+      >
+        LOCATION
+      </h4>
+
+      <p
+        class="text-gray-300 text-sm mt-2 leading-relaxed font-inter
+               md:text-base md:max-w-lg"
+      >
+        THE POTTER'S HOUSE, OPPOSITE  
+        ANTHONY UDOFIA ELEMENTARY  
+        SCHOOL, ALONG TECHNICAL  
+        COLLEGE, OSHOGBO, OSUN STATE.
+      </p>
+
+      <!-- Contact -->
+      <h4
+        class="text-lg font-extrabold font-clash mt-8
+               md:text-xl"
+      >
+        CONTACT US
+      </h4>
+
+      <p
+        class="text-gray-300 text-sm mt-2 font-inter leading-relaxed
+               md:text-base"
+      >
+        09053054750 <br />
+        09064898160
+      </p>
+
+      <!-- Email -->
+      <h4
+        class="text-lg font-extrabold font-clash mt-8
+               md:text-xl"
+      >
+        EMAIL
+      </h4>
+
+      <p
+        class="text-gray-300 text-sm mt-2 font-inter
+               md:text-base"
+      >
+        crmglobalhq@gmail.com
+      </p>
+
+      <!-- Social -->
+      <h4
+        class="text-lg font-extrabold font-clash mt-8
+               md:text-xl"
+      >
+        FOLLOW US
+      </h4>
+
+      <div
+        class="flex items-center gap-5 mt-3
+               md:gap-6"
+      >
+        <a href="#" aria-label="Facebook">
+          <Facebook class="w-6 h-6 md:w-7 md:h-7 text-white" />
+        </a>
+
+        <a href="#" aria-label="Instagram">
+          <Instagram class="w-6 h-6 md:w-7 md:h-7 text-white" />
+        </a>
+
+        <a href="#" aria-label="YouTube">
+          <Youtube class="w-6 h-6 md:w-7 md:h-7 text-white" />
+        </a>
       </div>
 
-      <!-- Contact Form -->
-      <div class="flex-1 bg-gray-300 rounded-3xl p-6">
-        <h3 class="text-lg font-bold mb-4 text-black font-clash">Get in Touch</h3>
-        <p class="text-black mb-6 font-inter">
-          Reach out with inquiries about registration, partnerships, or retreat details.
-        </p>
-
-        <form class="flex flex-col gap-4">
-          <input type="text" placeholder="Name" class="bg-transparent border-b border-black focus:outline-none text-black py-2" />
-          <input type="email" placeholder="Email" class="bg-transparent border-b border-black focus:outline-none text-black py-2" />
-          <input type="text" placeholder="Subject" class="bg-transparent border-b border-black focus:outline-none text-black py-2" />
-          <textarea placeholder="Message" rows="4" class="bg-transparent border-b border-black focus:outline-none text-black py-2"></textarea>
-
-          <button type="submit" class="bg-linear-to-r from-blue-700 to-blue-500 text-white py-3 rounded-full mt-2 hover:scale-105 transition-transform duration-300">
-            Send message
-          </button>
-        </form>
-      </div>
     </div>
   </section>
 </template>
+
+<script setup>
+import { Facebook, Instagram, Youtube } from "lucide-vue-next"
+</script>
