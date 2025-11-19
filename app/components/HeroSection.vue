@@ -52,14 +52,26 @@
     </div>
 
     <!-- WhatsApp Floating Button -->
-    <button
+    <!-- <button
       v-if="showWhatsapp"
       class="fixed bottom-20 right-5 bg-green-500 w-14 h-14 rounded-full
              flex justify-center items-center shadow-lg active:scale-95 transition
              md:w-16 md:h-16 md:right-10"
     >
       <img src="../assets/whatsapp.jpg" alt="WhatsApp" class="w-8 h-8 md:w-9 md:h-9" />
-    </button>
+    </button> -->
+
+    <a
+      v-if="showWhatsapp"
+      :href="`https://wa.me/${whatsappNumber}`"
+      target="_blank"
+      rel="noopener noreferrer"
+      class="fixed bottom-20 right-5 bg-green-500 w-14 h-14 rounded-full
+            flex justify-center items-center shadow-lg active:scale-95 transition
+            md:w-16 md:h-16 md:right-10"
+    >
+      <img src="../assets/whatsapp.png" alt="WhatsApp" class="w-8 h-8 md:w-9 md:h-9" />
+    </a>
 
     <!-- Scroll Down Indicator -->
     <div
@@ -85,6 +97,8 @@
 import { ref } from 'vue'
 import Countdown from '~/components/Countdown.vue'
 import { useScrollVisibility } from '~/composables/useScrollVisibility'
+import { MessageCircle } from "lucide-vue-next"
+const whatsappNumber = "2348141625841"
 
 // Target section after hero
 const nextSection = '#about'

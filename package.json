@@ -11,6 +11,7 @@
   },
   "dependencies": {
     "@nuxt/image": "^1.11.0",
+    "@supabase/supabase-js": "^2.43.4",
     "@tailwindcss/vite": "^4.1.16",
     "lucide-vue-next": "^0.554.0",
     "nuxt": "^4.1.3",

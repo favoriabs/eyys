@@ -6,7 +6,7 @@
     <!-- Logo -->
     <NuxtLink to="#home">
       <img
-        src="../assets/logo2.png"
+        src="../assets/logo.png"
         alt="EYYS Logo"
         class="h-9 md:h-12 object-contain"
       />

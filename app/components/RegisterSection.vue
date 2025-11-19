@@ -14,7 +14,7 @@
       REGISTER NOW
     </h2>
 
-    <!-- Countdown (centered on screens) -->
+    <!-- Countdown -->
     <div class="mt-6 flex justify-center">
       <Countdown class="w-full md:w-auto" />
     </div>
@@ -40,70 +40,63 @@
                p-4 md:p-6 lg:p-8 flex flex-col"
       >
         <!-- Title -->
-        <h4
-          class="uppercase text-sm md:text-base font-bold font-clash
-                 max-w-[85%] leading-tight"
-        >
+        <h4 class="uppercase text-sm md:text-base font-bold font-clash leading-tight">
           {{ plan.title }}
         </h4>
 
         <!-- Description -->
-        <p
-          class="text-gray-300 text-sm md:text-base
-                 mt-2 mb-5 font-inter max-w-[95%] leading-snug"
-        >
+        <p class="text-gray-300 text-sm md:text-base mt-2 mb-5 font-inter">
           {{ plan.desc }}
         </p>
 
         <!-- Price -->
-        <p
-          class="text-4xl md:text-5xl font-extrabold font-clash mb-5
-                 leading-none"
-        >
+        <p class="text-4xl md:text-5xl font-extrabold font-clash mb-5">
           ₦{{ plan.price.toLocaleString() }}
         </p>
 
         <!-- Button -->
-        <RegisterButton class="mt-auto" />
+        <RegisterButton :plan="plan" @register="openRegisterModal" />
 
-        <!-- Vector in the last card only -->
+        <!-- Vector -->
         <NuxtImg
           v-if="index === plans.length - 1"
           src="/images/vectors/Vector (3).png"
-          class="absolute bottom-0 right-0 w-32 md:w-36 opacity-20 pointer-events-none"
+          class="absolute bottom-0 right-0 w-32 md:w-36 opacity-20"
         />
       </div>
     </div>
-
   </section>
+
+  <!-- ACCOMMODATION MODAL -->
+  <AccommodationModal
+    :show="showModal"
+    :plan="selectedPlan"
+    @close="showModal = false"
+    @success="onSubmitted"
+  />
 </template>
 
 <script setup>
+import RegisterButton from '~/components/RegisterButton.vue'
+import AccommodationModal from '~/components/AccommodationModal.vue'
+
 const plans = [
-  {
-    title: 'Shared Standard Room',
-    desc: 'Affordable 3-person shared accommodation.',
-    price: 20000
-  },
-  {
-    title: 'Shared Comfort Room',
-    desc: 'Upgraded 3-person shared stay with added comfort.',
-    price: 25000
-  },
-  {
-    title: 'Shared Apartment (Short-Let)',
-    desc: '4-person serviced apartment with sitting room, dining, and kitchen.',
-    price: 30000
-  },
-  {
-    title: 'Double Deluxe Room',
-    desc: '2-person semi-private room. Designed for comfort and quiet.',
-    price: 35000
-  },
-  {
-    title: 'Executive Solo Suite',
-    desc: 'Private single-occupancy room. Premium, peaceful, and exclusive.',
-    price: 35000
-  }
+  { title: 'Shared Standard Room', desc: 'Affordable 3-person shared accommodation.', price: 20000 },
+  { title: 'Shared Comfort Room', desc: 'Upgraded 3-person shared stay with added comfort.', price: 25000 },
+  { title: 'Shared Apartment (Short-Let)', desc: '4-person serviced apartment with sitting room, dining, and kitchen.', price: 30000 },
+  { title: 'Double Deluxe Room', desc: '2-person semi-private room. Designed for comfort and quiet.', price: 35000 },
+  { title: 'Executive Solo Suite', desc: 'Private single-occupancy room. Premium, peaceful, and exclusive.', price: 35000 }
 ]
+
+const showModal = ref(false)
+const selectedPlan = ref(null)
+
+const openRegisterModal = (plan) => {
+  selectedPlan.value = plan
+  showModal.value = true
+}
+
+const onSubmitted = (data) => {
+  console.log("Saved + Paid:", data)
+}
 </script>
