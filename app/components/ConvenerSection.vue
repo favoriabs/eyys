@@ -28,7 +28,7 @@
       <img
         src="/images/convener.jpg"
         alt="Prophet OLUWAFEMI JOSEPH ADEGBENGA"
-        class="w-32 h-32 md:w-44 md:h-44 lg:w-52 lg:h-52 rounded-full object-cover"
+        class="w-32 h-32 md:w-44 md:h-44 lg:w-52 lg:h-52 rounded-full object-cover object-top"
       />
     </div>
 
