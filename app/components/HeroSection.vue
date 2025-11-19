@@ -50,7 +50,7 @@
                active:scale-95 transition
                md:px-10 md:py-5 md:text-xl"
       >
-        Book Now →
+        Book Now
       </button>
     </div>
 

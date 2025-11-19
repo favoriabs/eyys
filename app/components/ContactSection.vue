@@ -50,15 +50,15 @@
 
       <div class="flex items-center gap-5 mt-3">
 
-        <a href="https://web.facebook.com/renewalnation" aria-label="Facebook">
+        <a href="https://web.facebook.com/renewalnation" aria-label="Facebook" target="_blank">
           <Facebook class="w-6 h-6 text-white" />
         </a>
 
-        <a href="https://www.instagram.com/renewal_nation" aria-label="Instagram">
+        <a href="https://www.instagram.com/renewal_nation" aria-label="Instagram" target="_blank">
           <Instagram class="w-6 h-6 text-white" />
         </a>
 
-        <a href="https://www.youtube.com/crmglobal" aria-label="YouTube">
+        <a href="https://www.youtube.com/@crmglobal" aria-label="YouTube" target="_blank">
           <Youtube class="w-6 h-6 text-white" />
         </a>
 

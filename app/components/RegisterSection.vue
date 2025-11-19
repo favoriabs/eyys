@@ -86,7 +86,7 @@ const plans = [
   { title: 'Shared Comfort Room', desc: 'Upgraded 3-person shared stay with added comfort.', price: 25000 },
   { title: 'Shared Apartment (Short-Let)', desc: '4-person serviced apartment with sitting room, dining, and kitchen.', price: 30000 },
   { title: 'Double Deluxe Room', desc: '2-person semi-private room. Designed for comfort and quiet.', price: 35000 },
-  { title: 'Executive Solo Suite', desc: 'Private single-occupancy room. Premium, peaceful, and exclusive.', price: 75000 }
+  { title: 'Executive Solo Suite', desc: 'Private single-occupancy room. Premium, peaceful, and exclusive.', price: 70000 }
 ]
 
 const showModal = ref(false)
