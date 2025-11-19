@@ -1,74 +1,54 @@
 <template>
-  <section id="contact" class="bg-black text-white px-6 py-20">
+  <section id="about" class="bg-black text-white px-6 py-20">
 
-    <!-- Heading -->
+    <!-- Section Title -->
     <h2 class="text-3xl font-extrabold font-clash">
-      CONTACT
+      ABOUT EYYS
     </h2>
 
-    <!-- Card -->
-    <div class="mt-6 bg-neutral-900 rounded-3xl p-6">
+    <!-- Subtitle -->
+    <p class="text-gray-300 text-sm mt-2 font-syne leading-snug">
+      DISCOVER WHY END YOUR YEAR STRONG IS A <br />
+      MUST ATTEND FOR EVERYONE
+    </p>
 
-      <!-- Lead Title -->
-      <h3 class="text-lg font-extrabold font-clash">
-        We’re Here To Assist You
-      </h3>
+    <!-- Content Card -->
+    <div class="mt-8 bg-neutral-900 p-6 rounded-3xl relative overflow-hidden">
 
-      <p class="text-gray-300 text-sm mt-3 leading-relaxed font-inter">
-        Have questions about the retreat?  
-        Need help with registration?  
-        Our team is ready to assist you.
+      <p class="text-gray-200 text-sm leading-relaxed font-inter relative z-10">
+
+        <span class="font-semibold">END YOUR YEAR STRONG (EYYS)</span>
+        is an annual re-calibration & revival gathering of believers to seek & have deeper encounters
+        with the presence, word & wisdom of God. Where believers get equipped with prophetic insights,
+        revelation, direction, strategy, intelligence and divine power.
+
+        <br /><br />
+
+        Over the period of 5 days, participants will engage in powerful strategic & prophetic sessions
+        of prayer, worship, prophetic, insightful & transformational teachings.
+
+        <br /><br />
+
+        A set-up for alignment with kingdom purposes, ideas, agenda and possibilities.
+
+        <br /><br />
+
+        Born from a passion to see lives transformed, destinies aligned and unlocked, EYYS has grown
+        into a spiritual platform encounter where the weary are refreshed, the hungry are filled,
+        vision is reignited, and divine proposes are born.
+
       </p>
 
-      <!-- Location -->
-      <h4 class="text-lg font-extrabold font-clash mt-8">LOCATION</h4>
+      <!-- Decorative Vector -->
+      <img
+        src="/images/vectors/Vector (3).png"
+        alt="Decorative Vector"
+        class="absolute -bottom-5 right-5 w-52 opacity-20 pointer-events-none select-none"
+      />
 
-      <p class="text-gray-300 text-sm mt-2 leading-relaxed font-inter">
-        THE POTTER'S HOUSE, OPPOSITE  
-        ANTHONY UDOFIA ELEMENTARY  
-        SCHOOL, ALONG TECHNICAL  
-        COLLEGE, OSHOGBO, OSUN STATE.
-      </p>
-
-      <!-- Contact -->
-      <h4 class="text-lg font-extrabold font-clash mt-8">CONTACT US</h4>
-
-      <p class="text-gray-300 text-sm mt-2 font-inter leading-relaxed">
-        09053054750 <br />
-        09064898160
-      </p>
-
-      <!-- Email -->
-      <h4 class="text-lg font-extrabold font-clash mt-8">EMAIL</h4>
-
-      <p class="text-gray-300 text-sm mt-2 font-inter">
-        crmglobalhq@gmail.com
-      </p>
-
-      <!-- Follow Us -->
-      <h4 class="text-lg font-extrabold font-clash mt-8">FOLLOW US</h4>
-
-      <div class="flex items-center gap-5 mt-3">
-
-        <a href="https://web.facebook.com/renewalnation" aria-label="Facebook">
-          <Facebook class="w-6 h-6 text-white" />
-        </a>
-
-        <a href="https://www.instagram.com/renewal_nation" aria-label="Instagram">
-          <Instagram class="w-6 h-6 text-white" />
-        </a>
-
-        <a href="https://www.youtube.com/crmglobal" aria-label="YouTube">
-          <Youtube class="w-6 h-6 text-white" />
-        </a>
-
-      </div>
-
+      <!-- Gradient overlay to make text readable -->
+      <div class="absolute inset-0 bg-linear-to-t from-black/40 to-transparent pointer-events-none"></div>
     </div>
 
   </section>
 </template>
-
-<script setup>
-import { Facebook, Instagram, Youtube } from "lucide-vue-next"
-</script>

@@ -35,7 +35,7 @@
 
     <!-- Button Text -->
     <span :class="{ 'opacity-0': loading }">
-      <slot>Register</slot>
+      <slot>Proceed to book</slot>
     </span>
 
     <!-- Trailing Arrow (if no custom icon & not loading) -->

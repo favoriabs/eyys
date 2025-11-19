@@ -1,6 +1,6 @@
 <template>
   <section
-    id="register"
+    id="accommodation"
     class="bg-black text-white px-6 py-20
            md:px-12 lg:px-20
            max-w-6xl mx-auto"
@@ -16,7 +16,7 @@
 
     <!-- Countdown -->
     <div class="mt-6 flex justify-center">
-      <Countdown class="w-full md:w-auto" />
+      <Countdown class="w-full md:w-auto" :backgroundColor="'bg-white'" :numberColor="'text-black'" />
     </div>
 
     <!-- Subtitle -->
@@ -79,13 +79,14 @@
 <script setup>
 import RegisterButton from '~/components/RegisterButton.vue'
 import AccommodationModal from '~/components/AccommodationModal.vue'
+import Countdown from '~/components/Countdown.vue'
 
 const plans = [
   { title: 'Shared Standard Room', desc: 'Affordable 3-person shared accommodation.', price: 20000 },
   { title: 'Shared Comfort Room', desc: 'Upgraded 3-person shared stay with added comfort.', price: 25000 },
   { title: 'Shared Apartment (Short-Let)', desc: '4-person serviced apartment with sitting room, dining, and kitchen.', price: 30000 },
   { title: 'Double Deluxe Room', desc: '2-person semi-private room. Designed for comfort and quiet.', price: 35000 },
-  { title: 'Executive Solo Suite', desc: 'Private single-occupancy room. Premium, peaceful, and exclusive.', price: 35000 }
+  { title: 'Executive Solo Suite', desc: 'Private single-occupancy room. Premium, peaceful, and exclusive.', price: 75000 }
 ]
 
 const showModal = ref(false)

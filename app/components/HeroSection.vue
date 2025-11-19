@@ -1,7 +1,9 @@
 <template>
   <section
     ref="heroRef"
-    class="bg-black text-white min-h-screen 
+    id="home"
+    class="bg-black text-white 
+           min-h-[calc(100vh-80px)]
            px-6 pt-28 pb-32 relative
            md:px-12 lg:px-20
            flex flex-col items-center text-center
@@ -42,25 +44,17 @@
     <!-- Register Button -->
     <div class="mt-10 flex justify-center">
       <button
+        @click="scrollToRegister"
         class="bg-linear-to-r from-blue-600 to-blue-800 text-white 
                px-8 py-4 rounded-full font-semibold text-lg shadow-md
                active:scale-95 transition
                md:px-10 md:py-5 md:text-xl"
       >
-        Register Now →
+        Book Now →
       </button>
     </div>
 
     <!-- WhatsApp Floating Button -->
-    <!-- <button
-      v-if="showWhatsapp"
-      class="fixed bottom-20 right-5 bg-green-500 w-14 h-14 rounded-full
-             flex justify-center items-center shadow-lg active:scale-95 transition
-             md:w-16 md:h-16 md:right-10"
-    >
-      <img src="../assets/whatsapp.jpg" alt="WhatsApp" class="w-8 h-8 md:w-9 md:h-9" />
-    </button> -->
-
     <a
       v-if="showWhatsapp"
       :href="`https://wa.me/${whatsappNumber}`"
@@ -92,26 +86,45 @@
   </section>
 </template>
 
-
 <script setup>
 import { ref } from 'vue'
 import Countdown from '~/components/Countdown.vue'
 import { useScrollVisibility } from '~/composables/useScrollVisibility'
-import { MessageCircle } from "lucide-vue-next"
+
 const whatsappNumber = "2348141625841"
 
-// Target section after hero
+// Next section after hero
 const nextSection = '#about'
+const registerSection = '#accommodation'
 
 const heroRef = ref(null)
-
-// Controls WhatsApp visibility
 const { isVisible: showWhatsapp } = useScrollVisibility(150)
 
+/* Scroll to next section */
 const scrollToNext = () => {
   const el = document.querySelector(nextSection)
-  if (el) {
-    el.scrollIntoView({ behavior: 'smooth' })
-  }
+  if (!el) return
+
+  window.scrollTo({
+    top: el.offsetTop - 20,
+    behavior: "smooth"
+  })
+}
+
+/* Scroll to register section */
+const scrollToRegister = () => {
+  const el = document.querySelector(registerSection)
+  if (!el) return
+
+  window.scrollTo({
+    top: el.offsetTop - 20,
+    behavior: "smooth"
+  })
 }
 </script>
+
+<style scoped>
+html, body {
+  overflow-y: auto !important;
+}
+</style>

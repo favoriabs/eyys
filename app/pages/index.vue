@@ -1,7 +1,8 @@
 <template>
   <div>
-    <Navbar />
+    <NavBar />
     <HeroSection />
+    <AboutSection />
     <ConvenerSection />
     <RegisterSection />
     <ContactSection />
@@ -9,9 +10,10 @@
 </template>
 
 <script setup>
-import Navbar from '../components/NavBar.vue'
+import NavBar from '../components/NavBar.vue'
 import HeroSection from '../components/HeroSection.vue'
 import ConvenerSection from '../components/ConvenerSection.vue'
 import RegisterSection from '../components/RegisterSection.vue'
 import ContactSection from '../components/ContactSection.vue'
+import AboutSection from '../components/AboutSection.vue'
 </script>

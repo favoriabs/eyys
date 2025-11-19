@@ -4,23 +4,23 @@
            px-6 py-4 md:px-12 lg:px-20 flex justify-between items-center">
 
     <!-- Logo -->
-    <NuxtLink to="#home">
+    <a @click="navigateToSection('#home')" class="cursor-pointer">
       <img
         src="../assets/logo.png"
         alt="EYYS Logo"
         class="h-9 md:h-12 object-contain"
       />
-    </NuxtLink>
+    </a>
 
     <!-- Desktop Menu -->
     <nav class="hidden md:flex items-center gap-10 lg:gap-14 text-sm font-medium">
-      <NuxtLink 
+      <a
         v-for="item in navItems" 
         :key="item.href"
-        :to="item.href"
-        class="hover:text-yellow-400 transition duration-300 cursor-pointer scroll-smooth">
+        @click="navigateToSection(item.href)"
+        class="hover:text-yellow-400 transition duration-300 cursor-pointer">
         {{ item.label }}
-      </NuxtLink>
+      </a>
     </nav>
 
     <!-- Mobile Hamburger -->
@@ -71,8 +71,9 @@ const isOpen = ref(false)
 
 const navItems = [
   { label: "Home", href: "#home" },
-  { label: "About", href: "#about" },
-  { label: "Why Attend", href: "#why" },
+  { label: "About EYYS", href: "#about" },
+  { label: "Convener's Desk", href: "#convener" },
+  { label: "Accommodation Options", href: "#accommodation" },
   { label: "Contact", href: "#contact" },
 ]
 

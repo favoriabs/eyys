@@ -1,11 +1,11 @@
 <template>
-  <div class="bg-neutral-900 rounded-2xl p-6 text-center">
-    <p class="uppercase text-gray-400 text-xs tracking-wide mb-3">
+  <div :class="`${backgroundColor} rounded-2xl p-6 text-center`">
+    <!-- <p class="uppercase text-gray-400 text-xs tracking-wide mb-3">
       Countdown
-    </p>
+    </p> -->
 
     <!-- Numbers -->
-    <div class="text-4xl font-bold leading-none tracking-wide">
+    <div :class="`text-4xl font-bold leading-none tracking-wide ${numberColor}`">
       {{ formattedWeeks }}:
       {{ formattedDays }}:
       {{ formattedHours }}:
@@ -27,6 +27,17 @@
 <script setup>
 import { ref, onMounted, onUnmounted, computed } from 'vue'
 
+defineProps({
+  // No props needed for now
+  backgroundColor: {
+    type: String,
+    default: 'bg-neutral-900',
+  },
+  numberColor: {
+    type: String,
+    default: 'text-white',
+  },
+})
 // Target Date → 26 Dec 2025, 8:00 AM
 const targetDate = new Date('2025-12-26T08:00:00')
 
