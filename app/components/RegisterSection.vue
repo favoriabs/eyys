@@ -1,7 +1,7 @@
 <template>
   <section
     id="accommodation"
-    class="bg-black text-white px-6 py-20
+    class="bg-black text-white px-6 py-16
            md:px-12 lg:px-20
            max-w-6xl mx-auto"
   >

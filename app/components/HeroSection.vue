@@ -3,11 +3,11 @@
     ref="heroRef"
     id="home"
     class="bg-black text-white 
-           min-h-[calc(100vh-80px)]
-           px-6 pt-28 pb-32 relative
-           md:px-12 lg:px-20
-           flex flex-col items-center text-center
-           max-w-6xl mx-auto"
+         min-h-[calc(100vh-80px)]
+         px-6 pt-28 pb-20 relative
+         md:px-12 lg:px-20
+         flex flex-col items-center text-center
+         max-w-6xl mx-auto"
   >
 
     <!-- Dates -->

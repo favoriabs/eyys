@@ -1,5 +1,6 @@
 <template>
-  <section id="about" class="bg-black text-white px-6 py-20">
+  <section id="about" class="bg-black text-white px-6 py-16 md:px-12 lg:px-20">
+
 
     <!-- Section Title -->
     <h2 class="text-3xl font-extrabold font-clash">

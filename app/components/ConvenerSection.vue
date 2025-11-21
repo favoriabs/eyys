@@ -1,7 +1,7 @@
 <template>
   <section
     id="convener"
-    class="bg-black text-white px-6 pt-28 pb-20
+    class="bg-black text-white px-6 py-16
            md:px-12 lg:px-20
            max-w-4xl lg:max-w-5xl xl:max-w-6xl mx-auto"
   >

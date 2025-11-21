@@ -1,5 +1,5 @@
 <template>
-  <section id="contact" class="bg-black text-white px-6 py-20">
+  <section id="contact" class="bg-black text-white px-6 py-16 md:px-12 lg:px-20">
 
     <!-- Heading -->
     <h2 class="text-3xl font-extrabold font-clash">
