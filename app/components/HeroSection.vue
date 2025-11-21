@@ -55,7 +55,7 @@
     </div>
 
     <!-- WhatsApp Floating Button -->
-    <a
+    <!-- <a
       v-if="showWhatsapp"
       :href="`https://wa.me/${whatsappNumber}`"
       target="_blank"
@@ -65,7 +65,7 @@
             md:w-16 md:h-16 md:right-10"
     >
       <img src="../assets/whatsapp.png" alt="WhatsApp" class="w-8 h-8 md:w-9 md:h-9" />
-    </a>
+    </a> -->
 
     <!-- Scroll Down Indicator -->
     <div
