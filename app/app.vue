@@ -5,7 +5,7 @@
     
     <!-- Fixed WhatsApp Button -->
     <a
-      href="https://wa.me/2349053054750"
+      href="https://wa.me/2348141625841"
       target="_blank"
       rel="noopener noreferrer"
       class="fixed bottom-6 right-6 z-50 bg-green-500 hover:bg-green-600 
