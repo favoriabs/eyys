@@ -2,13 +2,14 @@
   <button
     :disabled="disabled || loading"
     @click="handleClick"
-    class="relative flex items-center justify-center gap-2 rounded-lg font-semibold
+    class="relative flex items-center justify-center gap-2 rounded-full font-semibold
            transition-all duration-200 w-full
            active:scale-95
            disabled:opacity-50 disabled:cursor-not-allowed
            focus:outline-none
            select-none
            px-6 py-3
+           bg-linear-to-r from-blue-500 to-blue-800
            bg-blue-700 hover:bg-blue-800 text-white"
   >
 
@@ -35,7 +36,7 @@
 
     <!-- Button Text -->
     <span :class="{ 'opacity-0': loading }">
-      <slot>Proceed to book</slot>
+      <slot>{{ buttonText }}</slot>
     </span>
 
     <!-- Trailing Arrow (if no custom icon & not loading) -->
@@ -48,6 +49,7 @@ import { ArrowRight } from "lucide-vue-next"
 
 const props = defineProps({
   plan: Object,
+  buttonText: { type: String, default: "Proceed to book" },
   icon: [String, Object, Function], // Optional custom icon component
   disabled: { type: Boolean, default: false },
   loading: { type: Boolean, default: false },
