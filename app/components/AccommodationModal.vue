@@ -67,6 +67,11 @@
             <input v-model="form.fullName" required class="w-full mt-1 p-3 rounded-xl border border-gray-300 bg-gray-50 focus:ring-2 focus:ring-blue-500" />
           </div>
 
+          <div>
+            <label class="text-sm font-medium text-gray-700">Email <span class="text-red-600">*</span></label>
+            <input v-model="form.email" required class="w-full mt-1 p-3 rounded-xl border border-gray-300 bg-gray-50 focus:ring-2 focus:ring-blue-500" />
+          </div>
+
           <!-- Gender + Age range -->
           <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
             <div>
@@ -178,7 +183,7 @@
           <!-- T-shirt size + inscription -->
           <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
             <div>
-              <label class="text-sm font-medium text-gray-700">T-shirt size <span class="text-red-600">*</span></label>
+              <label class="text-sm font-medium text-gray-700">T-shirt size</label>
               <select v-model="form.tshirtSize" required class="w-full mt-1 p-3 rounded-xl border border-gray-300 bg-gray-50 focus:ring-2 focus:ring-blue-500">
                 <option value="">Select</option>
                 <option>S</option>
@@ -190,7 +195,7 @@
             </div>
 
             <div>
-              <label class="text-sm font-medium text-gray-700">Choose your shirt inscription <span class="text-red-600">*</span></label>
+              <label class="text-sm font-medium text-gray-700">Choose your shirt inscription</label>
               <select v-model="form.tshirtInscription" required class="w-full mt-1 p-3 rounded-xl border border-gray-300 bg-gray-50 focus:ring-2 focus:ring-blue-500">
                 <option value="">Select</option>
                 <option>Kingdom infiltrators (Lagos)</option>
@@ -257,6 +262,7 @@ const PAYMENT_MODE = (import.meta.env.VITE_USE_PAYSTACK || 'false') === 'true'
 /* form state */
 const form = reactive({
   fullName: '',
+  email: '',
   gender: '',
   ageRange: '',
   phone: '',
@@ -280,7 +286,7 @@ const primaryButtonText = computed(() => (isPaidPlan.value ? 'Continue to paymen
 /* Validation: ensure required fields and conditional requireds */
 const canSubmit = computed(() => {
   // base requireds
-  const base = form.fullName && form.gender && form.ageRange && form.phone && form.attendingFrom && form.tshirtSize && form.tshirtInscription && form.isCommittee && form.volunteer && form.arrivalDay
+  const base = form.fullName && form.email && form.gender && form.ageRange && form.phone && form.attendingFrom && form.isCommittee && form.volunteer && form.arrivalDay
 
   if (!base) return false
 
@@ -318,6 +324,7 @@ async function onSubmit() {
     plan: props.plan?.title || 'No Room',
     price: props.plan?.price || 0,
     full_name: form.fullName,
+    email: form.email,
     gender: form.gender,
     age_range: form.ageRange,
     phone: form.phone,
@@ -375,13 +382,14 @@ function payWithPaystack() {
 
     const handler = PaystackPop.setup({
       key: import.meta.env.VITE_PAYSTACK_PUBLIC_KEY,
-      email: form.phone ? `${form.phone}@eyys.com` : `guest@eyys.com`,
+      email: form.email ? form.email : "guest@eyys.com",
       amount: (Number(props.plan?.price) || 0) * 100,
       currency: 'NGN',
       metadata: {
         custom_fields: [
           { display_name: 'Plan', variable_name: 'plan', value: props.plan?.title || '' },
-          { display_name: 'Phone', variable_name: 'phone', value: form.phone }
+          { display_name: 'Phone', variable_name: 'phone', value: form.phone },
+          { display_name: 'Email', variable_name: 'email', value: form.email }
         ]
       },
       callback: function (response: any) {

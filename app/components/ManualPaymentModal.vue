@@ -125,6 +125,7 @@ async function submit() {
 
       // EXACT KEYS from AccommodationModal
       full_name: props.form.full_name,
+      email: props.form.email,
       gender: props.form.gender,
       age_range: props.form.age_range,
       phone: props.form.phone,

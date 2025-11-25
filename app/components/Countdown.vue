@@ -38,8 +38,8 @@ defineProps({
     default: 'text-white',
   },
 })
-// Target Date → 26 Dec 2025, 8:00 AM
-const targetDate = new Date('2025-12-26T08:00:00')
+// Target Date → 26 Dec 2025, 5:00 PM
+const targetDate = new Date('2025-12-26T17:00:00')
 
 // Reactive countdown values
 const weeks = ref(0)

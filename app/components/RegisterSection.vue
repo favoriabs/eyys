@@ -25,7 +25,7 @@
         :key="index"
         class="relative bg-neutral-900 border border-white/20 rounded-2xl p-4 md:p-6 lg:p-8 flex flex-col"
       >
-        <h4 class="uppercase text-sm md:text-base font-bold font-clash leading-tight">
+        <h4 class="uppercase text-l md:text-base font-bold font-clash leading-tight">
           {{ plan.title }}
         </h4>
 
@@ -78,7 +78,8 @@
 
     <SuccessModal 
       :show="showSuccess" 
-      :payload="successPayload" 
+      :payload="successPayload"
+      :plan="selectedPlan" 
       @close="showSuccess = false" 
     />
 
@@ -97,11 +98,11 @@ import confetti from "canvas-confetti"
 
 const plans = [
   { title: 'Registration Only', desc: 'No accommodation. Registration for the retreat alone.', price: 0 },
-  { title: 'Registration & Shared Standard Room', desc: 'Affordable 3-person shared accommodation.', price: 20400 },
-  { title: 'Registration & Shared Comfort Room', desc: 'Upgraded 3-person shared stay with added comfort.', price: 25475 },
-  { title: 'Registration & Shared Apartment (Short-Let)', desc: '4-person serviced apartment with sitting room, dining, and kitchen.', price: 30550 },
-  { title: 'Registration & Double Deluxe Room', desc: '2-person semi-private room. Designed for comfort and quiet.', price: 35625 },
-  { title: 'Registration & Executive Solo Suite', desc: 'Private single-occupancy room. Premium, peaceful, and exclusive.', price: 71150 }
+  { title: 'Registration & Shared Standard Room', desc: 'Affordable 3-person shared accommodation.', price: 21000 },
+  { title: 'Registration & Shared Comfort Room', desc: 'Upgraded 3-person shared stay with added comfort.', price: 26000 },
+  { title: 'Registration & Shared Apartment (Short-Let)', desc: '4-person serviced apartment with sitting room, dining, and kitchen.', price: 31000 },
+  { title: 'Registration & Double Deluxe Room', desc: '2-person semi-private room. Designed for comfort and quiet.', price: 36000 },
+  { title: 'Registration & Executive Solo Suite', desc: 'Private single-occupancy room. Premium, peaceful, and exclusive.', price: 72000 }
 ]
 
 const showModal = ref(false)

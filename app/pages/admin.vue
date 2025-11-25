@@ -253,42 +253,67 @@ async function downloadProof(path: string) {
 function exportCSV() {
   const rows = [
     [
+      "ID",
       "Full Name",
       "Phone",
+      "Email",
       "Gender",
       "Age Range",
       "Plan",
       "Price",
       "Committee",
+      "Committee Unit",
       "Volunteer",
-      "Location",
+      "Volunteer Unit",
+      "Attending From",
+      "Attending Other",
+      "Arrival Day",
+      "Health Conditions",
+      "T-Shirt Size",
+      "T-Shirt Inscription",
+      "Other Details",
       "Payment Method",
       "Payment Reference",
       "Proof URL",
+      "Created At"
     ],
     ...registrations.value.map((b) => [
+      b.id,
       b.full_name,
       b.phone,
+      b.email || "",
       b.gender,
       b.age_range,
       b.plan,
       b.price,
       b.is_committee,
+      b.committee_unit || "",
       b.volunteer,
-      b.location,
-      b.payment_method,
-      b.payment_reference,
+      b.volunteer_unit || "",
+      b.attending_from,
+      b.attending_other || "",
+      b.arrival_day || "",
+      b.health_conditions || "",
+      b.tshirt_size,
+      b.tshirt_inscription,
+      b.other_details || "",
+      b.payment_method || "",
+      b.payment_reference || "",
       b.proof_url ? getProofUrl(b.proof_url) : "",
+      b.created_at
     ]),
   ];
 
   let csvContent =
     "data:text/csv;charset=utf-8," +
-    rows.map((row) => row.join(",")).join("\n");
+    rows.map((row) => row.map(value =>
+      `"${String(value).replace(/"/g, '""')}"`
+    ).join(",")).join("\n");
 
   const link = document.createElement("a");
   link.href = encodeURI(csvContent);
   link.download = "registrations.csv";
   link.click();
 }
+
 </script>

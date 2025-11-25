@@ -37,8 +37,8 @@
 
         <!-- Message -->
         <p class="text-gray-600 mt-2 leading-relaxed">
-          Thank you for registering for EYYS 2025.
-          <span v-if="payload?.plan">Your plan: <b>{{ payload.plan }}</b>.</span>
+          <span>Thank you for registering for EYYS 2025.</span> <br> <br>
+          <span class="mt-3" v-if="payload?.payload?.price > 0">Your payment will be verified & you will receive a message shortly.</span> <br>
         </p>
 
         <!-- Paystack Reference -->
@@ -64,7 +64,8 @@
 <script setup lang="ts">
 const props = defineProps({
   show: { type: Boolean, default: false },
-  payload: { type: Object, default: () => ({}) }
+  payload: { type: Object, default: () => ({}) },
+  plan: { type: Object, default: () => ({}) }
 })
 
 const emit = defineEmits(["close"])
