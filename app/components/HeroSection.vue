@@ -95,7 +95,7 @@ const whatsappNumber = "2348141625841"
 
 // Next section after hero
 const nextSection = '#about'
-const registerSection = '#accommodation'
+const registerSection = '#register'
 
 const heroRef = ref(null)
 const { isVisible: showWhatsapp } = useScrollVisibility(150)

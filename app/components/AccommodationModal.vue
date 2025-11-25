@@ -116,7 +116,7 @@
 
           <!-- Arrival day -->
           <div>
-            <label class="text-sm font-medium text-gray-700">Expected arrival day</label>
+            <label class="text-sm font-medium text-gray-700">Expected arrival day <span class="text-red-600">*</span></label>
             <select v-model="form.arrivalDay" class="w-full mt-1 p-3 rounded-xl border border-gray-300 bg-gray-50 focus:ring-2 focus:ring-blue-500">
               <option value="">Select</option>
               <option>Day 1</option>
@@ -280,7 +280,7 @@ const primaryButtonText = computed(() => (isPaidPlan.value ? 'Continue to paymen
 /* Validation: ensure required fields and conditional requireds */
 const canSubmit = computed(() => {
   // base requireds
-  const base = form.fullName && form.gender && form.ageRange && form.phone && form.attendingFrom && form.tshirtSize && form.tshirtInscription && form.isCommittee && form.volunteer
+  const base = form.fullName && form.gender && form.ageRange && form.phone && form.attendingFrom && form.tshirtSize && form.tshirtInscription && form.isCommittee && form.volunteer && form.arrivalDay
 
   if (!base) return false
 
