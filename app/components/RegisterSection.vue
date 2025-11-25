@@ -97,7 +97,7 @@ import confetti from "canvas-confetti"
 
 
 const plans = [
-  { title: 'Registration Only', desc: 'No accommodation. Registration for the retreat alone.', price: 0 },
+  { title: 'Registration Only without accommodation', desc: 'No accommodation. Registration for the retreat alone.', price: 0 },
   { title: 'Registration & Shared Standard Room', desc: 'Affordable 3-person shared accommodation.', price: 21000 },
   { title: 'Registration & Shared Comfort Room', desc: 'Upgraded 3-person shared stay with added comfort.', price: 26000 },
   { title: 'Registration & Shared Apartment (Short-Let)', desc: '4-person serviced apartment with sitting room, dining, and kitchen.', price: 31000 },
