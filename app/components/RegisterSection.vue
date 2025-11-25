@@ -8,15 +8,9 @@
       REGISTER NOW
     </h2>
 
-    <!-- Decorative/preview image (local path provided) -->
-    <div class="mt-6 flex justify-center">
-      <!-- NOTE: this src points to the local file you uploaded. Transform path as needed in deployment. -->
-      <!-- <img src="/mnt/data/Screenshot 2025-11-23 at 22.43.36.png" alt="preview" class="hidden md:block w-48 h-auto rounded-lg opacity-80" /> -->
-    </div>
-
     <!-- Countdown -->
     <div class="mt-6 flex justify-center">
-      <Countdown class="w-full md:w-auto" />
+      <Countdown class="w-full md:w-auto" :backgroundColor="'bg-white'" :numberColor="'text-black'" />
     </div>
 
     <!-- Subtitle -->
@@ -82,6 +76,12 @@
       @success="onCompleted"
     />
 
+    <SuccessModal 
+      :show="showSuccess" 
+      :payload="successPayload" 
+      @close="showSuccess = false" 
+    />
+
   </section>
 </template>
 
@@ -90,20 +90,26 @@ import { ref } from 'vue'
 import AccommodationModal from '~/components/AccommodationModal.vue'
 import ManualPaymentModal from '~/components/ManualPaymentModal.vue'
 import Countdown from '~/components/Countdown.vue'
+import SuccessModal from '~/components/SuccessModal.vue'
+// @ts-ignore
+import confetti from "canvas-confetti"
+
 
 const plans = [
   { title: 'No Room', desc: 'No accommodation. Registration for the retreat alone.', price: 0 },
-  { title: 'Shared Standard Room', desc: 'Affordable 3-person shared accommodation.', price: 20000 },
-  { title: 'Shared Comfort Room', desc: 'Upgraded 3-person shared stay with added comfort.', price: 25000 },
-  { title: 'Shared Apartment (Short-Let)', desc: '4-person serviced apartment with sitting room, dining, and kitchen.', price: 30000 },
-  { title: 'Double Deluxe Room', desc: '2-person semi-private room. Designed for comfort and quiet.', price: 35000 },
-  { title: 'Executive Solo Suite', desc: 'Private single-occupancy room. Premium, peaceful, and exclusive.', price: 70000 }
+  { title: 'Shared Standard Room', desc: 'Affordable 3-person shared accommodation.', price: 20400 },
+  { title: 'Shared Comfort Room', desc: 'Upgraded 3-person shared stay with added comfort.', price: 25475 },
+  { title: 'Shared Apartment (Short-Let)', desc: '4-person serviced apartment with sitting room, dining, and kitchen.', price: 30550 },
+  { title: 'Double Deluxe Room', desc: '2-person semi-private room. Designed for comfort and quiet.', price: 35625 },
+  { title: 'Executive Solo Suite', desc: 'Private single-occupancy room. Premium, peaceful, and exclusive.', price: 71150 }
 ]
 
 const showModal = ref(false)
 const showManual = ref(false)
 const selectedPlan = ref<any>(null)
 const savedForm = ref<any>(null)
+const showSuccess = ref(false)
+const successPayload = ref<Record<string, any> | undefined>(undefined)
 
 function onPlanClick(plan: any) {
   selectedPlan.value = plan
@@ -118,6 +124,11 @@ function onCompleted(payload: any) {
   selectedPlan.value = null
   savedForm.value = null
 
+  successPayload.value = payload
+  showSuccess.value = true
+
+  fireConfetti()
+
   // Optionally show toast, redirect, etc.
   console.log('Registration completed:', payload)
 }
@@ -125,10 +136,37 @@ function onCompleted(payload: any) {
 // If AccommodationModal emits "manual" (PAYSTACK disabled), open manual modal and pass form data
 function openManualPayment(data: any) {
   // data is the form payload collected in AccommodationModal
+  console.log('Opening manual payment with data:', data)
   savedForm.value = data
   showManual.value = true
   showModal.value = false
+
 }
+
+function fireConfetti() {
+  const duration = 2500
+  const end = Date.now() + duration
+
+  ;(function frame() {
+    confetti({
+      particleCount: 4,
+      angle: 60,
+      spread: 70,
+      origin: { x: 0 }
+    })
+    confetti({
+      particleCount: 4,
+      angle: 120,
+      spread: 70,
+      origin: { x: 1 }
+    })
+
+    if (Date.now() < end) {
+      requestAnimationFrame(frame)
+    }
+  })()
+}
+
 </script>
 
 <style scoped>

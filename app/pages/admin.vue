@@ -80,7 +80,7 @@
               <th class="p-3">Name</th>
               <th class="p-3">Phone</th>
               <th class="p-3">Plan</th>
-              <th class="p-3">Location</th>
+              <th class="p-3">Attending From</th>
               <th class="p-3">Price</th>
               <th class="p-3">Payment</th>
               <th class="p-3">Proof</th>
@@ -92,7 +92,7 @@
               <td class="p-3">{{ b.full_name }}</td>
               <td class="p-3">{{ b.phone }}</td>
               <td class="p-3 font-medium">{{ b.plan }}</td>
-              <td class="p-3">{{ b.location }}</td>
+              <td class="p-3">{{ b.attending_from }}</td>
               <td class="p-3">{{ b.price ? `₦${b.price.toLocaleString()}` : 'FREE' }}</td>
 
               <td class="p-3">

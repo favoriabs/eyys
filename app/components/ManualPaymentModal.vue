@@ -114,6 +114,8 @@ async function submit() {
     }
 
     // save record to registrations table with payment_method='manual'
+
+
     const payload = {
       plan: props.plan?.title || 'Unknown',
       price: props.plan?.price || null,
@@ -130,9 +132,10 @@ async function submit() {
       is_committee: props.form.is_committee,
       committee_unit: props.form.committee_unit,
       volunteer: props.form.volunteer,
-      service_unit: props.form.service_unit,
+      volunteer_unit: props.form.volunteer_unit,
       arrival_day: props.form.arrival_day,
-      location: props.form.location,
+      attending_from: props.form.attending_from,
+      attending_other: props.form.attending_other,
       tshirt_size: props.form.tshirt_size,
       tshirt_inscription: props.form.tshirt_inscription,
       other_details: props.form.other_details
