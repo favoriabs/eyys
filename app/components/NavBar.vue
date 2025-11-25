@@ -23,46 +23,69 @@
       </a>
     </nav>
 
-    <!-- Mobile Hamburger -->
-    <button @click="toggleMenu" class="md:hidden">
-      <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
-           stroke-width="1.5" stroke="currentColor" class="w-8 h-8">
-        <path stroke-linecap="round" stroke-linejoin="round"
-              d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5"/>
-      </svg>
-    </button>
-  </header>
+    <!-- Mobile Toggle Button (Hamburger ↔ Close) -->
+    <button @click="toggleMenu" class="md:hidden relative w-8 h-8">
+      
+      <!-- Hamburger -->
+      <transition name="fade-slide">
+        <svg
+          v-if="!isOpen"
+          key="hamburger"
+          xmlns="http://www.w3.org/2000/svg"
+          fill="none"
+          viewBox="0 0 24 24"
+          stroke-width="1.5"
+          stroke="currentColor"
+          class="absolute inset-0 w-8 h-8">
+          <path stroke-linecap="round" stroke-linejoin="round"
+                d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5"/>
+        </svg>
+      </transition>
 
-  <!-- Mobile Menu Overlay -->
-  <transition name="slide">
-    <div
-      v-if="isOpen"
-      class="fixed inset-0 bg-black/95 text-white px-6 py-20
-             flex flex-col gap-10 text-xl font-semibold z-40 md:hidden">
-
-      <!-- Close Button -->
-      <button
-        @click="toggleMenu"
-        class="absolute top-6 right-6">
-        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
-             stroke-width="1.5" stroke="currentColor" class="w-8 h-8">
+      <!-- X Close Icon -->
+      <transition name="fade-slide">
+        <svg
+          v-if="isOpen"
+          key="close"
+          xmlns="http://www.w3.org/2000/svg"
+          fill="none"
+          viewBox="0 0 24 24"
+          stroke-width="1.5"
+          stroke="currentColor"
+          class="absolute inset-0 w-8 h-8">
           <path stroke-linecap="round" stroke-linejoin="round"
                 d="M6 18L18 6M6 6l12 12"/>
         </svg>
-      </button>
+      </transition>
 
-      <!-- Mobile Nav Links -->
-      <a
-        v-for="item in navItems"
-        :key="item.href"
-        @click="navigateToSection(item.href)"
-        class="cursor-pointer hover:text-yellow-400 transition duration-300">
-        {{ item.label }}
-      </a>
+    </button>
+  </header>
+
+
+  <!-- Mobile Menu Overlay -->
+  <transition name="slide-menu">
+    <div
+      v-if="isOpen"
+      class="fixed inset-0 bg-black/95 text-white px-6 py-20
+            flex flex-col gap-10 text-xl font-semibold z-40 md:hidden">
+
+      <!-- Mobile Nav + Cancel -->
+      <div class="flex flex-col gap-10">
+        <a
+          v-for="item in navItems"
+          :key="item.href"
+          @click="navigateToSection(item.href)"
+          class="cursor-pointer hover:text-yellow-400 transition duration-300">
+          {{ item.label }}
+        </a>
+      </div>
 
     </div>
   </transition>
+
 </template>
+
+
 
 <script setup>
 import { ref } from 'vue'
@@ -88,16 +111,45 @@ const navigateToSection = (id) => {
 }
 </script>
 
+
+
 <style scoped>
-/* Slide Transition */
-.slide-enter-active,
-.slide-leave-active {
-  transition: opacity 0.3s ease, transform 0.3s ease;
+
+/* ------------------------------- */
+/* Slide in the X icon / menu      */
+/* ------------------------------- */
+
+.fade-slide-enter-active,
+.fade-slide-leave-active {
+  transition: all 0.25s ease;
 }
 
-.slide-enter-from,
-.slide-leave-to {
+.fade-slide-enter-from {
   opacity: 0;
+  transform: translateY(-6px);
+}
+
+.fade-slide-leave-to {
+  opacity: 0;
+  transform: translateY(6px);
+}
+
+/* ------------------------------- */
+/* Slide down the mobile menu      */
+/* ------------------------------- */
+
+.slide-menu-enter-active,
+.slide-menu-leave-active {
+  transition: all 0.35s ease;
+}
+
+.slide-menu-enter-from {
   transform: translateY(-20px);
+  opacity: 0;
+}
+
+.slide-menu-leave-to {
+  transform: translateY(-20px);
+  opacity: 0;
 }
 </style>
