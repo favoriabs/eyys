@@ -98,11 +98,12 @@ import confetti from "canvas-confetti"
 
 const plans = [
   { title: 'Registration Only without accommodation', desc: 'No accommodation. Registration for the retreat alone.', price: 0 },
-  { title: 'Registration & Shared Standard Room', desc: 'Affordable 3-person shared accommodation.', price: 21000 },
-  { title: 'Registration & Shared Comfort Room', desc: 'Upgraded 3-person shared stay with added comfort.', price: 26000 },
-  { title: 'Registration & Shared Apartment (Short-Let)', desc: '4-person serviced apartment with sitting room, dining, and kitchen.', price: 31000 },
-  { title: 'Registration & Double Deluxe Room', desc: '2-person semi-private room. Designed for comfort and quiet.', price: 36000 },
-  { title: 'Registration & Executive Solo Suite', desc: 'Private single-occupancy room. Premium, peaceful, and exclusive.', price: 72000 }
+  { title: 'Registration & Accommodation', desc: 'Affordable accommodation Option.', price: 7000 },
+  { title: 'Registration & Shared Standard Room', desc: 'Affordable 3-person shared accommodation.', price: 20000 },
+  { title: 'Registration & Shared Comfort Room', desc: 'Upgraded 3-person shared stay with added comfort.', price: 25000 },
+  { title: 'Registration & Shared Apartment (Short-Let)', desc: '4-person serviced apartment with sitting room, dining, and kitchen.', price: 30000 },
+  { title: 'Registration & Double Deluxe Room', desc: '2-person semi-private room. Designed for comfort and quiet.', price: 35000 },
+  { title: 'Registration & Executive Solo Suite', desc: 'Private single-occupancy room. Premium, peaceful, and exclusive.', price: 70000 }
 ]
 
 const showModal = ref(false)
