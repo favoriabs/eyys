@@ -75,7 +75,7 @@
           <!-- Gender + Age range -->
           <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
             <div>
-              <label class="text-sm font-medium text-gray-700">Gender </label>
+              <label class="text-sm font-medium text-gray-700">Gender <span class="text-red-600">*</span></label>
               <select v-model="form.gender" required class="w-full mt-1 p-3 rounded-xl border border-gray-300 bg-gray-50 focus:ring-2 focus:ring-blue-500">
                 <option value="">Select</option>
                 <option>Male</option>
@@ -84,7 +84,7 @@
             </div>
 
             <div>
-              <label class="text-sm font-medium text-gray-700">Age range <span class="text-red-600">*</span></label>
+              <label class="text-sm font-medium text-gray-700">Age range </label>
               <select v-model="form.ageRange" required class="w-full mt-1 p-3 rounded-xl border border-gray-300 bg-gray-50 focus:ring-2 focus:ring-blue-500">
                 <option disabled value="">Select</option>
                 <option value="Below 18">Below 18</option>
