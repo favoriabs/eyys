@@ -75,7 +75,7 @@
           <!-- Gender + Age range -->
           <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
             <div>
-              <label class="text-sm font-medium text-gray-700">Gender <span class="text-red-600">*</span></label>
+              <label class="text-sm font-medium text-gray-700">Gender </label>
               <select v-model="form.gender" required class="w-full mt-1 p-3 rounded-xl border border-gray-300 bg-gray-50 focus:ring-2 focus:ring-blue-500">
                 <option value="">Select</option>
                 <option>Male</option>
@@ -286,7 +286,7 @@ const primaryButtonText = computed(() => (isPaidPlan.value ? 'Continue to paymen
 /* Validation: ensure required fields and conditional requireds */
 const canSubmit = computed(() => {
   // base requireds
-  const base = form.fullName && form.email && form.gender && form.ageRange && form.phone && form.attendingFrom && form.isCommittee && form.volunteer && form.arrivalDay
+  const base = form.fullName && form.email && form.gender && form.phone && form.attendingFrom && form.isCommittee && form.volunteer && form.arrivalDay
 
   if (!base) return false
 
