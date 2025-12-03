@@ -83,7 +83,7 @@
               </select>
             </div>
 
-            <div>
+            <!-- <div>
               <label class="text-sm font-medium text-gray-700">Age range </label>
               <select v-model="form.ageRange" required class="w-full mt-1 p-3 rounded-xl border border-gray-300 bg-gray-50 focus:ring-2 focus:ring-blue-500">
                 <option disabled value="">Select</option>
@@ -92,7 +92,7 @@
                 <option value="26 - 35">26 - 35</option>
                 <option value="36 - Above">36 - Above</option>
               </select>
-            </div>
+            </div> -->
           </div>
 
           <!-- Phone -->
