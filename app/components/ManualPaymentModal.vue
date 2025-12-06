@@ -72,7 +72,7 @@ const fileName = ref('')
 
 const bank = {
   bankName: import.meta.env.VITE_BANK_NAME || 'Ecobank Nigeria Limited',
-  accountNumber: import.meta.env.VITE_BANK_ACCOUNT || '2020072873',
+  accountNumber: import.meta.env.VITE_BANK_ACCOUNT || '2020074873',
   accountName: import.meta.env.VITE_BANK_ACCOUNT_NAME || 'Segilola Lawal'
 }
 
