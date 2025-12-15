@@ -35,8 +35,8 @@
         <br /><br />
 
         Born from a passion to see lives transformed, destinies aligned and unlocked, EYYS has grown
-        into a spiritual platform encounter where the weary are refreshed, the hungry are filled,
-        vision is reignited, and divine proposes are born.
+        into a spiritual platform for encounter where the weary are refreshed, the hungry are filled,
+        vision is reignited, and divine purposes are born.
 
       </p>
 
